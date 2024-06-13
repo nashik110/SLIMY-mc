@@ -1,0 +1,39 @@
+{
+    "buttonHola": {
+        "saluda": "Ola {user} xd "
+    },
+    "notFound": "O idioma que você inseriu não está disponível.",
+    "notUserAmin": "Você precisa de permissões de administrador para fazer isso.",
+    "notBotAdmin": "Eu não tenho permissões de administrador neste servidor.",
+    "ping": {
+		"pingAndMention": "Olá, meu ping é **{ping} ms**. Você também mencionou: {mentioned}.",
+		"onlyPing": "Olá, meu ping é **{ping} ms**.",
+		"noPing": "Olá, eu não vejo meu ping xd"
+	},
+    "avatar": {
+        "objective": "🖼️ Aqui está o avatar de **{username}**.",
+        "self": "🖼️ Aqui está o seu avatar."
+    },
+    "banner": {
+        "objective": "🖼️ Aqui está o banner de **{username}**.",
+        "self": "🖼️ Aqui está o seu banner.",
+        "noBanner": "**{username}** não tem um banner.",
+        "noSelfBanner": "Você não tem um banner."
+    },
+    "languages": {
+		"noArgs": "Por favor, insira o código para o novo idioma.\nExemplo: `{prefix}setlang pt`\nOs idiomas aceitos são `es` (Espanhol), `en` (Inglês), `pt` (Português).",
+		"newLang": "Você atualizou com sucesso meu idioma para este servidor.",
+		"error": "Ocorreu um erro ao tentar atualizar meu idioma neste servidor. Se o erro persistir, por favor, relate-o ao meu servidor de suporte.",
+		"noValid": "Esse código de idioma não está disponível."
+	},
+    "automod": {
+        "ruleDeleted": "Regra excluída com sucesso.",
+        "loadingConfig": "Configurando regra de autoMod..."
+    },
+    "prefix": {
+        "noPerms": "Você precisa de permissões de administrador para alterar meu prefixo neste servidor.",
+        "noArgs": ":x: | Você deve inserir o novo prefixo!",
+        "noValid": ":x: | O comprimento do prefixo deve ter pelo menos 1 caractere e no máximo 3!",
+        "success": "<a:check:1098763361807769672> | Meu novo prefixo é `{newPrefix}`."
+    }
+}

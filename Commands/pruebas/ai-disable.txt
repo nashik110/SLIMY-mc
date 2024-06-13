@@ -1,0 +1,28 @@
+const { SlashCommandBuilder, PermissionsBitField } = require('discord.js');
+const aiSchema = require('../../Schemas/aichema');
+
+module.exports = {
+    category: 'dev',
+    data: new SlashCommandBuilder()
+        .setName('ai-disable')
+        .setDescription('Desactivar el sistema ai.')
+        .setDMPermission(false),
+    async execute(interaction) {
+
+        if (!interaction.member.permissions.has(PermissionsBitField.Flags.ManageChannels))
+            return await interaction.reply({
+                content: 'No se puede desactivar el Sistema AI porque no se dispone de los permisos necesarios para ello.',
+                ephemeral: true
+            });
+
+        try {
+            await aiSchema.deleteMany({ Guild: interaction.guild.id });
+            await interaction.reply({
+                content: 'El sistema AI se ha desactivado correctamente.',
+                ephemeral: true,
+            });
+        } catch (error) {
+            console.error(error);
+        }
+    }
+};

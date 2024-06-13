@@ -1,0 +1,9 @@
+{
+    "token": "MTIzNzYxMjYxOTk3MjYwODA1Mw.GQdvWj.TLmZcz94Y0tcpYX0OUDcvIXkkrG3rVDOkyAWUo",
+    "clientId": "1221995267390181427",
+    "guildId": "1235496405196472360",
+    "default_prefix": "!",
+    "defaultSuccessColor": "GREEN",
+    "defaultErrorColor": "RED",
+    "mongoURL": "mongodb+srv://nicolastorres:osopardo21R@botdiscord.18thbws.mongodb.net/"
+}

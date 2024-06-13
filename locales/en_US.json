@@ -1,0 +1,39 @@
+{
+    "buttonHola": {
+		"saluda": "Hello {user} xd"
+	},
+    "notFound": "The language you entered is not available.",
+    "notUserAmin": "You need administrator permissions to do this.",
+    "notBotAdmin": "I don't have administrator permissions in this server.",
+    "ping": {
+		"pingAndMention": "Hello, my ping is **{ping} ms**. You also mentioned: {mentioned}.",
+		"onlyPing": "Hello, my ping is **{ping} ms**.",
+		"noPing": "Hello, I don't see my ping xd"
+	},
+    "avatar": {
+        "objective": "🖼️ Here is **{username}**'s avatar.",
+        "self": "🖼️ Here is your avatar."
+    },
+    "banner": {
+        "objective": "🖼️ Here is **{username}**'s banner.",
+        "self": "🖼️ Here is your banner.",
+        "noBanner": "**{username}** doesn't have a banner.",
+        "noSelfBanner": "You don't have a banner."
+    },
+    "languages": {
+		"noArgs": "Please enter the code for the new language.\nExample:`{prefix}setlang en`\nAccepted languages are `es` (Spanish), `en` (English), `pt` (Portuguese).",
+		"newLang": "You have successfully updated my language for this server.",
+		"error": "An error occurred while trying to update my language in this server. If the error persists, please report it to my support server.",
+		"noValid": "That language code is not available."
+	},
+    "automod": {
+        "ruleDeleted": "Rule deleted successfully.",
+        "loadingConfig": "Configuring autoMod rule..."
+    },
+    "prefix": {
+        "noPerms": "You need administrator permissions to change my prefix in this server.",
+        "noArgs": ":x: | You must enter the new prefix!",
+        "noValid": ":x: | The prefix length must be at least 1 character and at most 3!",
+        "success": "<a:check:1098763361807769672> | My new prefix is `{newPrefix}`."
+    }
+}

@@ -1,0 +1,53 @@
+const { SlashCommandBuilder, PermissionsBitField, ChannelType } = require('discord.js');
+const aiSchema = require('../../Schemas/aichema');
+
+module.exports = {
+    category: 'dev',
+  data: new SlashCommandBuilder()
+    .setName('ai-enable')
+    .setDescription('¡Configura el sistema de AI para tu servidor!')
+    .setDMPermission(false)
+    .addChannelOption((option) =>
+      option
+        .setName('canal')
+        .setDescription('Por favor, indica el canal donde te gustaría que se envíen los mensajes de AI.')
+        .setRequired(true)
+        .addChannelTypes(ChannelType.GuildText)
+    ),
+  async execute(interaction) {
+    
+    if (!interaction.member.permissions.has(PermissionsBitField.Flags.ManageChannels))
+      return await interaction.reply({
+        content: 'El sistema de IA no se puede configurar porque no tienes los permisos necesarios.',
+        ephemeral: true,
+      });
+
+    const canal = interaction.options.getChannel('canal');
+    const data = await aiSchema.findOne({ Guild: interaction.guild.id });
+
+    if (data) {
+      if (data.Channel === canal.id) {
+        return await interaction.reply({
+          content: 'Ya tienes un sistema AI implementado en este canal. Para reiniciarlo, usa el comando `/ai-disble`.',
+          ephemeral: true,
+        });
+      } else {
+        return await interaction.reply({
+          content: 'Ya tienes un sistema de IA implementado en otro canal. Para cambiarlo, usa el comando `/ai-diable` y luego `/ai-enable`.',
+          ephemeral: true,
+        });
+      }
+    }
+
+    await aiSchema.create({ Guild: interaction.guild.id, Channel: canal.id });
+
+    if (interaction.channelId === canal.id) {
+      await interaction.reply(`El sistema AI se ha implementado correctamente en ${canal}.`);
+    } else {
+      await interaction.reply({
+        content: `El sistema AI se ha implementado correctamente en ${canal}.`,
+        ephemeral: true,
+      });
+    }
+  },
+};
